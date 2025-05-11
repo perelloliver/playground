@@ -8,8 +8,7 @@ class ClassificationClient:
         self.pipeline = pipeline(model = model_name)
 
     def predict(self, text: RequestInput) -> RequestOutput:
-        print(text)
-        logging.info(f"Input text: {text.input}")
+        logging.info(f"CLASSIFYING MESSAGE: {text.input}")
         response = self.pipeline(text.input)
 
         return RequestOutput(
